@@ -12,11 +12,12 @@ Controller::Controller(sf::Window& window)  :
 }
 
 
-void Controller::takeInput(float dt)
+void Controller::takeInput()
 {
     // some shorthands..
     using Key       = sf::Keyboard;
-    auto  isPressed = sf::Keyboard::isKeyPressed;
+    using IsKeyPressedFunction = bool (*)(sf::Keyboard::Key);
+    IsKeyPressedFunction isPressed = sf::Keyboard::isKeyPressed;
 
     if (isPressed(Key::W) || isPressed(Key::Up))
         m_callbacks[ElevatorDown]();

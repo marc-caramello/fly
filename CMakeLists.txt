@@ -1,9 +1,4 @@
-#set(GLEW_INCLUDE_DIR "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew")
-#set(GLEW_LIBRARIES "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew")
-
-#set(SFML_INCLUDE_DIR "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib")
-#set(SFML_LIBRARIES "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib")
-
+set(CMAKE_CXX_STANDARD 17)
 cmake_minimum_required(VERSION 3.10)
 project(Fly)
 
@@ -80,14 +75,7 @@ find_package(OpenGL REQUIRED)
 
 # Include directories
 include_directories(
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-s.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-s-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-s.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-s-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib
     ${GLEW_INCLUDE_DIRS}
     ${OPENGL_INCLUDE_DIRS}
 )
@@ -101,7 +89,7 @@ target_link_libraries(Fly
     ${GLEW_LIBRARIES}
 )
 
-set_property(TARGET Fly PROPERTY CXX_STANDARD 14)
+set_property(TARGET Fly PROPERTY CXX_STANDARD 17)
 set_property(TARGET Fly PROPERTY CXX_STANDARD_REQUIRED ON)
 
 define_file_basename_for_sources(Fly)

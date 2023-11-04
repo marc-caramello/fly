@@ -19,19 +19,19 @@ public:
     static bool uploadFile(const std::string& name, const std::string& filetype, bool cube = false)
     { return cube ? get().priv_uploadCube(name, filetype) : get().priv_uploadFile(name, filetype); }
     static int  getSampler(const std::string& name) { return get().priv_getSampler(name); }
-    static uint generateTexture(const std::string& name = "") { return get().priv_generateTexture(name); }
+    static unsigned int generateTexture(const std::string& name = "") { return get().priv_generateTexture(name); }
 private:
     TextureManager();
 
-    bool priv_uploadFile(const std::string& name, const std::string& filetype);
-    bool priv_uploadCube(const std::string& name, const std::string& filetype);
-    int  priv_getSampler(const std::string& name) { return m_samplerMap.at(name); }
-    uint priv_generateTexture(const std::string& name);
+    bool         priv_uploadFile(const std::string& name, const std::string& filetype);
+    bool         priv_uploadCube(const std::string& name, const std::string& filetype);
+    int          priv_getSampler(const std::string& name) { return m_samplerMap.at(name); }
+    unsigned int priv_generateTexture(const std::string& name);
 
     static TextureManager& get();
 
-    const uint                  m_maxTextures;
-    uint                        m_counter;
+    const unsigned int          m_maxTextures;
+    unsigned int                m_counter;
     std::vector<GLuint>         m_textures;
     std::map<std::string, int>  m_samplerMap;
 };
