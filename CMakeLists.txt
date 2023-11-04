@@ -1,5 +1,16 @@
+#set(GLEW_INCLUDE_DIR "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew")
+#set(GLEW_LIBRARIES "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew")
+
+#set(SFML_INCLUDE_DIR "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib")
+#set(SFML_LIBRARIES "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib")
+
 cmake_minimum_required(VERSION 3.10)
 project(Fly)
+
+# Set the CMP0074 policy to NEW
+if(POLICY CMP0074)
+    cmake_policy(SET CMP0074 NEW)
+endif()
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release" CACHE STRING
@@ -10,8 +21,8 @@ endif(NOT CMAKE_BUILD_TYPE)
 set(BUILD_STATIC FALSE CACHE STRING "Set this to link external libraries statically")
 
 if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -Wnull-dereference -g -Og")
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -Wnull-dereference -g -Og")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 endif()
 
 # Add directory containing FindSFML.cmake to module path
@@ -23,10 +34,6 @@ file(GLOB SOURCES
     "${PROJECT_SOURCE_DIR}/src/Debug/*.cpp"
     "${PROJECT_SOURCE_DIR}/extlibs/src/*.cpp"
 )
-
-# if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-#     add_definitions(-DDEBUG)
-# endif()
 
 # Copy shaders and resources
 file(COPY shaders DESTINATION .)
@@ -63,22 +70,38 @@ if (BUILD_STATIC)
 endif()
 
 # Find SFML
-if (SFML_OS_WINDOWS AND SFML_COMPILER_MSVC)
-    find_package(SFML 2 COMPONENTS main graphics window system REQUIRED)
-else()
-    find_package(SFML 2 COMPONENTS graphics window system REQUIRED)
-endif()
+#find_package(SFML 2.6 COMPONENTS system window graphics REQUIRED)
 
-find_package(GLEW REQUIRED)
+# Find GLEW
+# find_package(GLEW REQUIRED)
+
+# Find OpenGL
 find_package(OpenGL REQUIRED)
 
-include_directories(${SFML_INCLUDE_DIR} ${OPENGL_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
+# Include directories
+include_directories(
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-s.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-system-s-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-s.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml/lib/sfml-window-s-d.lib 
+    ${GLEW_INCLUDE_DIRS}
+    ${OPENGL_INCLUDE_DIRS}
+)
 
 add_executable(Fly ${SOURCES})
-target_link_libraries(Fly ${SFML_LIBRARIES} ${SFML_DEPENDENCIES} ${OPENGL_LIBRARIES} ${GLEW_LIBRARIES})
+
+target_link_libraries(Fly
+    ${SFML_LIBRARIES}
+    ${SFML_DEPENDENCIES}
+    ${OPENGL_LIBRARIES}
+    ${GLEW_LIBRARIES}
+)
 
 set_property(TARGET Fly PROPERTY CXX_STANDARD 14)
 set_property(TARGET Fly PROPERTY CXX_STANDARD_REQUIRED ON)
 
-target_link_libraries(Fly)
 define_file_basename_for_sources(Fly)
