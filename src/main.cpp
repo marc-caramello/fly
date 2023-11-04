@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include <glm/gtx/transform.hpp>
 #include <cstdint>
+#include <memory> 
 #include "Terrain.h"
 #include "Log.h"
 #include "TextureManager.h"
@@ -89,7 +90,7 @@ Options processArguments(int argc, char** argv)
                 opts.windowWidth = std::stoi(width);
                 LOG(Info) << "Window width set to " << opts.windowWidth << std::endl;
             }
-            catch(std::exception error)
+            catch(const std::exception& error)
             {
                 LOG(Error) << "Invalid parameter for window width" << std::endl;
             }
@@ -104,7 +105,7 @@ Options processArguments(int argc, char** argv)
                 opts.windowHeight = std::stoi(height);
                 LOG(Info) << "Window height set to " << opts.windowHeight << std::endl;
             }
-            catch(std::exception error)
+            catch(const std::exception& error)
             {
                 LOG(Error) << "Invalid parameter for window height" << std::endl;
             }
@@ -120,7 +121,7 @@ Options processArguments(int argc, char** argv)
                 opts.manualSeed = true;
                 LOG(Info) << "Seed set to " << opts.seed << std::endl;
             }
-            catch(std::exception error)
+            catch(const std::exception& error)
             {
                 LOG(Error) << "Invalid parameter for seed" << std::endl;
             }
@@ -301,7 +302,7 @@ int main(int argc, char** argv)
         auto now = std::chrono::steady_clock::now();
         while (focus && now - prev_time > frame_period)
         {
-            controller.takeInput(frame_period_seconds);
+            controller.takeInput(/*frame_period_seconds*/);
 
             if (!paused)
             {

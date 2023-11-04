@@ -61,7 +61,10 @@
         "variant": "cpp"
     },
     "cSpell.words": [
+        "antialiasing",
         "curline",
+        "fullscreen",
+        "GLEW",
         "icurline",
         "illum",
         "indnum",
@@ -86,6 +89,7 @@
         "Verts",
         "vnor",
         "vpos",
-        "vtex"
+        "vtex",
+        "wireframe"
     ]
 }
