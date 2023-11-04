@@ -71,7 +71,10 @@ set(FIND_SFML_PATHS
     /sw
     /opt/local
     /opt/csw
-    /opt)
+    /opt
+    ${PWD}/sfml
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/sfml/lib
+    )
 
 # find the SFML include directory
 find_path(SFML_INCLUDE_DIR SFML/Config.hpp
