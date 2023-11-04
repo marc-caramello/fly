@@ -13,7 +13,7 @@ static unsigned int GetMaxTextureUnits()
     static int result = -1;
     if (result == -1)
         glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &result);
-    return static_cast<uint>(result);
+    return static_cast<unsigned int>(result);
 }
 
 
@@ -67,7 +67,7 @@ bool TextureManager::priv_uploadCube(const std::string& name, const std::string&
     glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 
     int target = GL_TEXTURE_CUBE_MAP_POSITIVE_X;
-    for (const std::string& suffix : {"rt", "lf", "up", "dn", "bk", "ft"})
+    for (const char* suffix : {"rt", "lf", "up", "dn", "bk", "ft"})
     {
         sf::Image image;
         if (!image.loadFromFile("resources/" + name + "_" + suffix + filetype))

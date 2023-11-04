@@ -701,7 +701,7 @@ namespace objl
 			for (int i = 0; i < int(sface.size()); i++)
 			{
 				// See What type the vertex is.
-				int vtype;
+				int vtype = 0;
 
 				algorithm::split(sface[i], svert, "/");
 
@@ -839,7 +839,7 @@ namespace objl
 
 					// pNext = the next vertex in the list
 					Vertex pNext;
-					if (i == tVerts.size() - 1)
+					if (i == int(tVerts.size()) - 1)
 					{
 						pNext = tVerts[0];
 					}
