@@ -14,8 +14,8 @@ namespace fly
 class ShadowMap
 {
 public:
-    const uint Width  = 1024;
-    const uint Height = 1024;
+    const unsigned int Width  = 1024;
+    const unsigned int Height = 1024;
     ShadowMap(Airplane& plane);
     // Updates the shadow map and returns the light space transformation matrix
     const glm::mat4 update();

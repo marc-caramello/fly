@@ -25,7 +25,7 @@ public:
     void setCallback(Event event, Callable cb) { if (event < TotalEvents) m_callbacks[event] = cb; }
     template <class Callable>
     void registerRotate(Callable cb) { m_rotateCallback = cb; }
-    void takeInput(float dt);
+    void takeInput();
 private:
     std::function<void(float, float)> m_rotateCallback;
     std::function<void(void)> m_callbacks[TotalEvents];

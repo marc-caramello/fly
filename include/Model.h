@@ -41,10 +41,10 @@ private:
 
     struct Mesh
     {
-        std::string name;
-        uint        elements_offset;
-        uint        elements_size;
-        Material&   material;
+        std::string  name;
+        unsigned int elements_offset;
+        unsigned int elements_size;
+        Material&    material;
     };
 
     std::vector<Material> m_materials;
@@ -52,7 +52,7 @@ private:
 
     AABB m_localBounds;
 
-    uint m_totalElements;
+    unsigned int m_totalElements;
 
     VertexArrayObject m_vao;
     GLuint m_vertexBuffer;

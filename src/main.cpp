@@ -20,8 +20,8 @@
 struct Options
 {
     float seed;
-    uint  windowWidth;
-    uint  windowHeight;
+    unsigned int  windowWidth;
+    unsigned int  windowHeight;
     bool  manualSeed;
     bool  wireframe;
     bool  showHelp;
@@ -160,7 +160,7 @@ int main(int argc, char** argv)
     settings.attributeFlags = sf::ContextSettings::Core;
 
     sf::VideoMode videoMode {opts.windowWidth, opts.windowHeight};
-    uint style =  sf::Style::Close | sf::Style::Resize;
+    unsigned int style =  sf::Style::Close | sf::Style::Resize;
     if (opts.fullscreen)
     {
         style = sf::Style::Fullscreen;

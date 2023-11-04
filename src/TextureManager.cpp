@@ -8,7 +8,7 @@
 namespace fly
 {
 
-static uint GetMaxTextureUnits()
+static unsigned int GetMaxTextureUnits()
 {
     static int result = -1;
     if (result == -1)
@@ -99,7 +99,7 @@ bool TextureManager::priv_uploadCube(const std::string& name, const std::string&
     return res;
 }
 
-uint TextureManager::priv_generateTexture(const std::string& name)
+unsigned int TextureManager::priv_generateTexture(const std::string& name)
 {
     GLuint texture;
     glGenTextures(1, &texture);

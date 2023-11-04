@@ -16,7 +16,7 @@
 
 // Namespace: OBJL
 //
-// Description: The namespace that holds eveyrthing that
+// Description: The namespace that holds everything that
 //	is needed and used for the OBJ Model Loader
 namespace objl
 {
@@ -139,7 +139,7 @@ namespace objl
 	{
 		Material()
 		{
-			name;
+			name = "";
 			Ns = 0.0f;
 			Ni = 0.0f;
 			d = 0.0f;
@@ -168,7 +168,7 @@ namespace objl
 		std::string map_Kd;
 		// Specular Texture Map
 		std::string map_Ks;
-		// Specular Hightlight Map
+		// Specular Highlight Map
 		std::string map_Ns;
 		// Alpha Texture Map
 		std::string map_d;
@@ -245,7 +245,7 @@ namespace objl
 	// Algorithms needed for OBJL
 	namespace algorithm
 	{
-		// Vector3 Multiplication Opertor Overload
+		// Vector3 Multiplication Operator Overload
 		Vector3 operator*(const float& left, const Vector3& right)
 		{
 			return Vector3(right.X * left, right.Y * left, right.Z * left);
@@ -265,7 +265,7 @@ namespace objl
 			float a = 1 - y - b;
 
 			// Projected point
-			Vector3  p = (a * tri1) + (b * tri2) + (y * tri3);
+			// Vector3  p = (a * tri1) + (b * tri2) + (y * tri3);
 
 			if (a >= 0 && a <= 1
 				&& b >= 0 && b <= 1
@@ -610,7 +610,7 @@ namespace objl
 
 					if (temp.size() != 1)
 					{
-						for (int i = 0; i < temp.size() - 1; i++)
+						for (long long unsigned int i = 0; i < temp.size() - 1; i++)
 						{
 							pathtomat += temp[i] + "/";
 						}
@@ -647,13 +647,13 @@ namespace objl
 			file.close();
 
 			// Set Materials for each Mesh
-			for (int i = 0; i < MeshMatNames.size(); i++)
+			for (long long unsigned int i = 0; i < MeshMatNames.size(); i++)
 			{
 				std::string matname = MeshMatNames[i];
 
 				// Find corresponding material name in loaded materials
 				// when found copy material variables into mesh material
-				for (int j = 0; j < LoadedMaterials.size(); j++)
+				for (long long unsigned int j = 0; j < LoadedMaterials.size(); j++)
 				{
 					if (LoadedMaterials[j].name == matname)
 					{
@@ -684,7 +684,7 @@ namespace objl
 
 	private:
 		// Generate vertices from a list of positions,
-		//	tcoords, normals and a face line
+		// tcoords, normals and a face line
 		void GenVerticesFromRawOBJ(std::vector<Vertex>& oVerts,
 			const std::vector<Vector3>& iPositions,
 			const std::vector<Vector2>& iTCoords,
@@ -778,7 +778,7 @@ namespace objl
 			}
 
 			// take care of missing normals
-			// these may not be truly acurate but it is the
+			// these may not be truly accurate but it is the
 			// best they get for not compiling a mesh with normals
 			if (noNormal)
 			{
@@ -795,7 +795,7 @@ namespace objl
 		}
 
 		// Triangulate a list of vertices into a face by printing
-		//	inducies corresponding with triangles within it
+		// indices corresponding with triangles within it
 		void VertexTriangluation(std::vector<unsigned int>& oIndices,
 			const std::vector<Vertex>& iVerts)
 		{
@@ -1094,7 +1094,7 @@ namespace objl
 				{
 					tempMaterial.map_Ks = algorithm::tail(curline);
 				}
-				// Specular Hightlight Map
+				// Specular Highlight Map
 				if (algorithm::firstToken(curline) == "map_Ns")
 				{
 					tempMaterial.map_Ns = algorithm::tail(curline);

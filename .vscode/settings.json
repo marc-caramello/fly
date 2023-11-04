@@ -59,5 +59,31 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "curline",
+        "icurline",
+        "illum",
+        "indnum",
+        "matname",
+        "meshname",
+        "mtllib",
+        "newmtl",
+        "objl",
+        "pathtomat",
+        "sface",
+        "SHADOWMAP",
+        "snor",
+        "spos",
+        "stex",
+        "svert",
+        "tcoords",
+        "texcoords",
+        "Triangluation",
+        "usemtl",
+        "Verts",
+        "vnor",
+        "vpos",
+        "vtex"
+    ]
 }

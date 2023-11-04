@@ -80,10 +80,10 @@ Model::Model(const std::string& model_path)
                            });
         }
 
-        uint offset = 0;
+        unsigned int offset = 0;
         for (const auto& mesh : loader.LoadedMeshes)
         {
-            m_meshes.push_back({mesh.MeshName, offset, static_cast<uint>(mesh.Indices.size()),
+            m_meshes.push_back({mesh.MeshName, offset, static_cast<unsigned int>(mesh.Indices.size()),
                                 m_materials.at(materials_map[mesh.MeshMaterial.name])});
             offset += mesh.Indices.size();
         }
