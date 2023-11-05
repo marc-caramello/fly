@@ -19,8 +19,8 @@ void CameraController::update(float dt)
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
         auto new_mouse = sf::Mouse::getPosition(m_window);
-        if (  new_mouse.x < 0 || new_mouse.x > m_window.getSize().x
-           || new_mouse.y < 0 || new_mouse.y > m_window.getSize().y)
+        if (  new_mouse.x < 0 || new_mouse.x > (int)m_window.getSize().x
+           || new_mouse.y < 0 || new_mouse.y > (int)m_window.getSize().y)
             return;
 
         if (m_mouseDown)

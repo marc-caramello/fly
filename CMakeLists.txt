@@ -7,14 +7,6 @@ if(POLICY CMP0074)
     cmake_policy(SET CMP0074 NEW)
 endif()
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Release" CACHE STRING
-      "Choose the type of build, options are:  Release."
-      FORCE)
-endif(NOT CMAKE_BUILD_TYPE)
-
-set(BUILD_STATIC FALSE CACHE STRING "Set this to link external libraries statically")
-
 if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -Wnull-dereference -g -Og")
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
@@ -52,9 +44,6 @@ function(define_file_basename_for_sources targetname)
     endforeach()
 endfunction()
 
-# Specify include Directory
-include_directories("${PROJECT_SOURCE_DIR}/include" "${PROJECT_SOURCE_DIR}/extlibs")
-
 # Set static if BUILD_STATIC is set
 if (BUILD_STATIC)
     set(SFML_STATIC_LIBRARIES TRUE)
@@ -64,41 +53,19 @@ if (BUILD_STATIC)
     endif()
 endif()
 
-# Find SFML
-# find_package(SFML 2.6 COMPONENTS system window graphics REQUIRED)
-
-# Find GLEW
-# find_package(GLEW REQUIRED)
-
-# Find OpenGL
-#find_package(OpenGL REQUIRED)
-
-# Include directories
 include_directories(
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib
-    #${GLEW_INCLUDE_DIRS}
-    #${OPENGL_INCLUDE_DIRS}
+    "${PROJECT_SOURCE_DIR}/include" 
+    "${PROJECT_SOURCE_DIR}/extlibs" 
+    "${PROJECT_SOURCE_DIR}/lib" 
 )
 
 add_executable(Fly ${SOURCES})
 
 target_link_libraries(Fly 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-s-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-s.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system.lib 
-
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-s-d.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-s.lib 
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window.lib 
-
-    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew32s.lib 
-
-    #${SFML_LIBRARIES}
-    #${SFML_DEPENDENCIES}
-    #${OPENGL_LIBRARIES}
-    #${GLEW_LIBRARIES}
+    "${PROJECT_SOURCE_DIR}/lib/libglew32.a"
+    "${PROJECT_SOURCE_DIR}/lib/libglew32.dll.a"
+    "${PROJECT_SOURCE_DIR}/lib/libsfml-system-s.a"
+    "${PROJECT_SOURCE_DIR}/lib/libsfml-window-s.a"
 )
 
 set_property(TARGET Fly PROPERTY CXX_STANDARD 17)
