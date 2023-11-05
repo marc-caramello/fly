@@ -28,7 +28,7 @@ public:
     {}
     void operator() (float dt, ParticleData& data)
     {
-        for (int i = 0; i < data.particlesAlive; ++i)
+        for (size_t i = 0; i < data.particlesAlive; ++i)
         {
             glm::vec3 radius = m_center - data.positionArray[i];
             radius = radius - glm::dot(radius, m_axis) * m_axis;
@@ -43,7 +43,9 @@ private:
 
 void variableSizeImpl(float dt, ParticleData& data, float begin, float end)
 {
-    for (int i = 0; i < data.particlesAlive; ++i)
+    dt += 1;
+
+    for (size_t i = 0; i < data.particlesAlive; ++i)
     {
         data.sizeArray[i] = lerp(data.ageArray[i] / data.maxAgeArray[i], begin, end);
     }
@@ -67,24 +69,24 @@ ParticleUpdater createAxialAcceleration(const glm::vec3& center, const glm::vec3
 
 ParticleUpdater createLinearSize(float begin, float end)
 {
-    return [=](float dt, ParticleData& data){ variableSizeImpl(dt, data, begin, end); };
+    return static_cast<fly::ParticleUpdater>( [=](float dt, fly::ParticleData& data){ variableSizeImpl(dt, data, begin, end); });
 }
 
 void basicPhysics(float dt, ParticleData& data)
 {
-    for (int i = 0; i < data.particlesAlive; ++i)
+    for (size_t i = 0; i < data.particlesAlive; ++i)
     {
         data.positionArray[i] += data.velocityArray[i] * dt;
     }
 }
 
-void fireColor(float dt, ParticleData& data)
+void fireColor(ParticleData& data)
 {
-    for (int i = 0; i < data.particlesAlive; ++i)
+    for (size_t i = 0; i < data.particlesAlive; ++i)
     {
         static auto startcolor = glm::vec4{194.f/255.f, 64.4f/255.f, 31.f/255.f, 1.f};
 //         static auto startcolor = glm::vec4{251.f/255.f, 97.f/255.f, 38.f/255.f, 1.f};
-        static auto midcolor   = glm::vec4{0.4f, 0.4f, 0.4f, 0.3f};
+//         static auto midcolor   = glm::vec4{0.4f, 0.4f, 0.4f, 0.3f};
         static auto endcolor   = glm::vec4{0.f, 0.f, 0.f, 0.f};
         float t = 1.f * data.ageArray[i] / data.maxAgeArray[i];
 //         if (t < 0.5f)
@@ -97,7 +99,7 @@ void fireColor(float dt, ParticleData& data)
 
 void lifeUpdater(float dt, ParticleData& data)
 {
-    for (int i = 0; i < data.particlesAlive; )
+    for (size_t i = 0; i < data.particlesAlive; )
     {
         if ((data.ageArray[i] += dt) > data.maxAgeArray[i])
             data.kill(i);

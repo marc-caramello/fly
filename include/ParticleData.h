@@ -17,7 +17,7 @@ struct ParticleData
     void        reset(int particles);
     void        kill(std::size_t index);
 
-    int                    particlesAlive;
+    size_t                 particlesAlive;
     std::vector<glm::vec3> positionArray;
     std::vector<glm::vec3> velocityArray;
     std::vector<glm::vec4> colorArray;
@@ -25,7 +25,7 @@ struct ParticleData
     std::vector<float>     ageArray;
     std::vector<float>     maxAgeArray;
 private:
-    int           m_maxParticles;
+    size_t                 m_maxParticles;
 };
 
 

@@ -35,9 +35,13 @@ ParticleRenderer::ParticleRenderer(ParticleData& data)
     glBufferData(GL_ARRAY_BUFFER, 0, nullptr, GL_STREAM_DRAW);
 
     if (m_shader.loadShaderFile("shaders/particle.vert", Shader::Vertex))
+    {
         LOG(Info) << "Loaded Vertex Shader" << std::endl;
+    }
     if (m_shader.loadShaderFile("shaders/particle.frag", Shader::Fragment))
+    {
         LOG(Info) << "Loaded Fragment Shader" << std::endl;
+    }
     glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferObject);
     m_shader.setAttributeFloat("vertex", 3, 0, 0);
     glBindBuffer(GL_ARRAY_BUFFER, m_positionBufferObject);

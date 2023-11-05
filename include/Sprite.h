@@ -17,9 +17,9 @@ public:
     void setScale(const glm::vec2& scale) { m_scale = scale, m_recalculateModel = true; }
 private:
     glm::vec2 m_position;
-    glm::vec2 m_scale;
     glm::mat4 m_model;
     bool      m_recalculateModel;
+    glm::vec2 m_scale;
     ShaderProgram m_shader;
     GLuint m_vertexBuffer;
     VertexArrayObject m_vao;

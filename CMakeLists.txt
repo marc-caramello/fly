@@ -65,28 +65,40 @@ if (BUILD_STATIC)
 endif()
 
 # Find SFML
-#find_package(SFML 2.6 COMPONENTS system window graphics REQUIRED)
+# find_package(SFML 2.6 COMPONENTS system window graphics REQUIRED)
 
 # Find GLEW
 # find_package(GLEW REQUIRED)
 
 # Find OpenGL
-find_package(OpenGL REQUIRED)
+#find_package(OpenGL REQUIRED)
 
 # Include directories
 include_directories(
     C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib
-    ${GLEW_INCLUDE_DIRS}
-    ${OPENGL_INCLUDE_DIRS}
+    #${GLEW_INCLUDE_DIRS}
+    #${OPENGL_INCLUDE_DIRS}
 )
 
 add_executable(Fly ${SOURCES})
 
-target_link_libraries(Fly
-    ${SFML_LIBRARIES}
-    ${SFML_DEPENDENCIES}
-    ${OPENGL_LIBRARIES}
-    ${GLEW_LIBRARIES}
+target_link_libraries(Fly 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-s-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system-s.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-system.lib 
+
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-s-d.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window-s.lib 
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/sfml-window.lib 
+
+    C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/lib/glew32s.lib 
+
+    #${SFML_LIBRARIES}
+    #${SFML_DEPENDENCIES}
+    #${OPENGL_LIBRARIES}
+    #${GLEW_LIBRARIES}
 )
 
 set_property(TARGET Fly PROPERTY CXX_STANDARD 17)
