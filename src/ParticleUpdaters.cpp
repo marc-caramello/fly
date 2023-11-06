@@ -80,7 +80,7 @@ void basicPhysics(float dt, ParticleData& data)
     }
 }
 
-void fireColor(ParticleData& data)
+void fireColor(float dt, ParticleData& data)
 {
     for (size_t i = 0; i < data.particlesAlive; ++i)
     {
