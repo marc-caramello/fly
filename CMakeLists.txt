@@ -12,10 +12,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/extlibs
 )
 find_package(GLEW REQUIRED)
-include_directories(${GLEW_INCLUDE_DIRS})
-
 find_package(SFML REQUIRED)
-include_directories(${SFML_INCLUDE_DIRS})
 
 add_executable(Fly ${SOURCES})
 set_property(TARGET Fly PROPERTY CXX_STANDARD 17)
