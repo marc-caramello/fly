@@ -4,10 +4,10 @@
 #include <GL/glew.h>
 #include <SFML/Graphics/Image.hpp>
 #include <cstdint>
+#include <ProjectFolderPath.h>
 
 namespace fly
 {
-
 static unsigned int GetMaxTextureUnits()
 {
     static int result = -1;
@@ -35,7 +35,8 @@ bool TextureManager::priv_uploadFile(const std::string& name, const std::string&
     glActiveTexture(GL_TEXTURE0 + m_counter);
     glBindTexture(GL_TEXTURE_2D, texture);
     sf::Image image;
-    if (!image.loadFromFile("resources/" + name + filetype))
+
+    if (!image.loadFromFile(ProjectFolderPath::str + name + filetype))
     {
         LOG(Error) << "Couldn't load texture file" << std::endl;
         return false;
@@ -70,7 +71,8 @@ bool TextureManager::priv_uploadCube(const std::string& name, const std::string&
     for (const char* suffix : {"rt", "lf", "up", "dn", "bk", "ft"})
     {
         sf::Image image;
-        if (!image.loadFromFile("resources/" + name + "_" + suffix + filetype))
+
+        if (!image.loadFromFile(ProjectFolderPath::str + name + "_" + suffix + filetype))
         {
             LOG(Error) << "Failed to open texture for sky box: " << name + "_" + suffix << std::endl;
             return false;

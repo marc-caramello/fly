@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include <glm/gtx/transform.hpp>
 #include <cstdint>
-#include <memory> 
+#include <memory>
 #include "Terrain.h"
 #include "Log.h"
 #include "TextureManager.h"
@@ -17,6 +17,7 @@
 #include "ParticleSystem.h"
 #include "Sprite.h"
 #include "Debug/Box.h"
+#include "ProjectFolderPath.h"
 
 struct Options
 {
@@ -139,6 +140,7 @@ Options processArguments(int argc, char** argv)
 int main(int argc, char** argv)
 {
     using namespace fly;
+    ProjectFolderPath::str = ProjectFolderPath::getStr();
 
     Log::get().setLogStream(std::cout);
     Log::get().setLevel(Debug);
@@ -186,10 +188,9 @@ int main(int argc, char** argv)
     // GLEW bug where glewInit() sets GL_INVALID_ENUM
     glGetError();
 
-    TextureManager::uploadFile("terrain_lookup", ".png");
-    TextureManager::uploadFile("TropicalSunnyDay/TropicalSunnyDay", ".png",
-                               TextureManager::TextureCube);
-    TextureManager::uploadFile("flare", ".png");
+    TextureManager::uploadFile(ProjectFolderPath::str + "\\resources\\terrain_lookup", ".png");
+    TextureManager::uploadFile(ProjectFolderPath::str + "\\resources\\TropicalSunnyDay\\TropicalSunnyDay", ".png", TextureManager::TextureCube);
+    TextureManager::uploadFile(ProjectFolderPath::str + "\\resources\\flare", ".png");
 
     // The default projection matrix
     glm::mat4 projection_matrix = glm::perspective(glm::radians(45.0f),

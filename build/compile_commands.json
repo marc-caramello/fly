@@ -1,0 +1,146 @@
+[
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\extlibs\\src\\simplexnoise.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\extlibs\\src\\simplexnoise.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\extlibs\\src\\simplexnoise.cpp",
+  "output": "CMakeFiles\\Fly.dir\\extlibs\\src\\simplexnoise.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Airplane.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Airplane.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Airplane.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Airplane.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\BoundingBox.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\BoundingBox.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\BoundingBox.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\BoundingBox.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Camera.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Camera.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Camera.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Camera.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\CameraController.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\CameraController.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\CameraController.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\CameraController.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Controller.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Controller.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Controller.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Controller.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Debug\\Box.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Debug\\Box.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Debug\\Box.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Debug\\Box.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\FrameBuffer.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\FrameBuffer.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\FrameBuffer.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\FrameBuffer.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Log.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Log.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Log.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Log.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Model.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Model.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Model.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Model.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ParticleData.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleData.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleData.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ParticleData.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ParticleEmitters.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleEmitters.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleEmitters.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ParticleEmitters.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ParticleRenderer.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleRenderer.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleRenderer.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ParticleRenderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ParticleSystem.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleSystem.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleSystem.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ParticleSystem.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ParticleUpdaters.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleUpdaters.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ParticleUpdaters.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ParticleUpdaters.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Shader.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Shader.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Shader.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Shader.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\ShadowMap.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ShadowMap.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\ShadowMap.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\ShadowMap.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Sky.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Sky.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Sky.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Sky.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Sprite.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Sprite.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Sprite.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Sprite.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Terrain.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Terrain.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Terrain.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Terrain.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\TerrainRenderer.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\TerrainRenderer.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\TerrainRenderer.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\TerrainRenderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\TextureManager.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\TextureManager.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\TextureManager.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\TextureManager.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\Utility.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Utility.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\Utility.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\Utility.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/include -IC:/Users/marcc/OneDrive/Desktop/VScode/Projects/fly/extlibs -g -std=gnu++17 -o CMakeFiles\\Fly.dir\\src\\main.cpp.obj -c C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\main.cpp",
+  "file": "C:\\Users\\marcc\\OneDrive\\Desktop\\VScode\\Projects\\fly\\src\\main.cpp",
+  "output": "CMakeFiles\\Fly.dir\\src\\main.cpp.obj"
+}
+]
