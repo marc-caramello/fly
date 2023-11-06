@@ -7,9 +7,13 @@ file(GLOB SOURCES
     "${PROJECT_SOURCE_DIR}/src/Debug/*.cpp"
     "${PROJECT_SOURCE_DIR}/extlibs/src/*.cpp"
 )
-find_package(SFML REQUIRED)
+include_directories(
+    "${PROJECT_SOURCE_DIR}/include"
+    "${PROJECT_SOURCE_DIR}/extlibs"
+)
 find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(SFML REQUIRED)
 
 add_executable(Fly ${SOURCES})
 set_property(TARGET Fly PROPERTY CXX_STANDARD 17)
