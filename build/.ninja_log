@@ -1,0 +1,27 @@
+# ninja log v5
+16	4607	7210206961736162	CMakeFiles/Fly.dir/src/main.cpp.obj	5b3032df3f22807c
+287	3103	7210209770475774	CMakeFiles/Fly.dir/src/Log.cpp.obj	a6dc1ab0b0bc9f52
+54	3545	7210209774823942	CMakeFiles/Fly.dir/src/BoundingBox.cpp.obj	16a7feaa10533206
+162	3705	7210209776307233	CMakeFiles/Fly.dir/src/Controller.cpp.obj	a61581b36916992e
+89	4312	7210209782493981	CMakeFiles/Fly.dir/src/Camera.cpp.obj	8b782e1da413e91a
+198	4625	7210209785640068	CMakeFiles/Fly.dir/src/Debug/Box.cpp.obj	c2506d1cde8bc706
+123	4774	7210209786586357	CMakeFiles/Fly.dir/src/CameraController.cpp.obj	3587f2f5c27a7620
+241	4828	7210209787137424	CMakeFiles/Fly.dir/src/FrameBuffer.cpp.obj	49c431329fce7d6e
+406	4886	7210209787839531	CMakeFiles/Fly.dir/src/ParticleData.cpp.obj	e9f31b2ac16aedd
+3104	9962	7210209838420608	CMakeFiles/Fly.dir/src/ParticleEmitters.cpp.obj	8ca7eb106d917f3f
+3705	10156	7210209840660840	CMakeFiles/Fly.dir/src/ParticleSystem.cpp.obj	180d804140c19ab
+4313	11053	7210209850150620	CMakeFiles/Fly.dir/src/ParticleUpdaters.cpp.obj	4a13816a27a3e4c4
+4625	11164	7210209850941150	CMakeFiles/Fly.dir/src/Shader.cpp.obj	2a4db443d5e13aec
+4886	11514	7210209854634677	CMakeFiles/Fly.dir/src/Sprite.cpp.obj	fd6ebcdfd89dbeee
+25	11935	7210209858760317	CMakeFiles/Fly.dir/src/Airplane.cpp.obj	708a501aa8e2016c
+11935	14642	7210209885629458	CMakeFiles/Fly.dir/src/simplexnoise.cpp.obj	5874bb592bb62ec1
+3545	16683	7210209906114427	CMakeFiles/Fly.dir/src/ParticleRenderer.cpp.obj	f6cce7d39ce3095a
+11166	16917	7210209908668856	CMakeFiles/Fly.dir/src/Utility.cpp.obj	78954c4b38735b2b
+338	16966	7210209908739885	CMakeFiles/Fly.dir/src/Model.cpp.obj	aaaeab44df959bb9
+4829	17432	7210209914065044	CMakeFiles/Fly.dir/src/Sky.cpp.obj	c9a3dcf8f1a81891
+9963	17757	7210209917113670	CMakeFiles/Fly.dir/src/Terrain.cpp.obj	96f5e0bf2d4e9360
+4774	18072	7210209920471563	CMakeFiles/Fly.dir/src/ShadowMap.cpp.obj	7ce080cf9a356ec1
+10156	20870	7210209948510491	CMakeFiles/Fly.dir/src/TerrainRenderer.cpp.obj	6f3da8497587a0a6
+11054	21572	7210209955434181	CMakeFiles/Fly.dir/src/TextureManager.cpp.obj	5c2ab455a9a88ebf
+11514	23143	7210209971240043	CMakeFiles/Fly.dir/src/main.cpp.obj	5b3032df3f22807c
+23144	23891	7210209978553099	Fly.exe	1cc7df6d114e5cd1

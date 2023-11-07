@@ -1,6 +1,7 @@
 #include "ParticleRenderer.h"
 #include "TextureManager.h"
 #include "Log.h"
+#include "ProjectFolderPath.h"
 
 namespace fly
 {
@@ -34,11 +35,11 @@ ParticleRenderer::ParticleRenderer(ParticleData& data)
     glBindBuffer(GL_ARRAY_BUFFER, m_sizeBufferObject);
     glBufferData(GL_ARRAY_BUFFER, 0, nullptr, GL_STREAM_DRAW);
 
-    if (m_shader.loadShaderFile("shaders/particle.vert", Shader::Vertex))
+    if (m_shader.loadShaderFile(ProjectFolderPath::str + "\\shaders\\particle.vert", Shader::Vertex))
     {
         LOG(Info) << "Loaded Vertex Shader" << std::endl;
     }
-    if (m_shader.loadShaderFile("shaders/particle.frag", Shader::Fragment))
+    if (m_shader.loadShaderFile(ProjectFolderPath::str + "\\shaders\\particle.frag", Shader::Fragment))
     {
         LOG(Info) << "Loaded Fragment Shader" << std::endl;
     }

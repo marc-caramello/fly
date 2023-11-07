@@ -6,6 +6,7 @@
 #include "Model.h"
 #include "Log.h"
 #include "Utility.h"
+#include "ProjectFolderPath.h"
 
 namespace fly
 {
@@ -27,11 +28,12 @@ Model::Model(const std::string& model_path)
     glGenBuffers(1, &m_elementBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_elementBuffer);
 
-    if (m_shaderProgram.loadShaderFile("shaders/model.vert", Shader::Vertex))
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\model.vert", Shader::Vertex))
     {
         LOG(Info) << "Loaded Vertex shader" << std::endl;
     }
-    if (m_shaderProgram.loadShaderFile("shaders/model.frag", Shader::Fragment))
+    
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\model.frag", Shader::Fragment))
     {
         LOG(Info) << "Loaded Fragment shader" << std::endl;
     }

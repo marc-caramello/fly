@@ -3,6 +3,7 @@
 #include "Utility.h"
 #include "TextureManager.h"
 #include "Log.h"
+#include "ProjectFolderPath.h"
 
 namespace fly
 {
@@ -14,11 +15,11 @@ ShadowMap::ShadowMap(Airplane& plane) :
                                .attachDepthTexture("ShadowMap")
                                .build())
 {
-    if (m_shaderProgram.loadShaderFile("shaders/shadow.vert", Shader::Vertex))
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\shadow.vert", Shader::Vertex))
     {
         LOG(Info) << "Loaded Vertex shader" << std::endl;
     }
-    if (m_shaderProgram.loadShaderFile("shaders/shadow.frag", Shader::Fragment))
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\shadow.frag", Shader::Fragment))
     {
         LOG(Info) << "Loaded Fragment shader" << std::endl;
     }

@@ -4,6 +4,7 @@
 #include "Log.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include <cassert>
+#include "ProjectFolderPath.h"
 
 namespace fly
 {
@@ -20,11 +21,11 @@ TerrainRenderer::TerrainRenderer(int radius, int detail) :
     glGenBuffers(1, &m_elementBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_elementBuffer);
 
-    if (m_shaderProgram.loadShaderFile("shaders/terrain.vert", Shader::Vertex))
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\terrain.vert", Shader::Vertex))
     {
         LOG(Info) << "Loaded Vertex shader" << std::endl;
     }
-    if (m_shaderProgram.loadShaderFile("shaders/terrain.frag", Shader::Fragment))
+    if (m_shaderProgram.loadShaderFile(ProjectFolderPath::str + "\\shaders\\terrain.frag", Shader::Fragment))
     {
         LOG(Info) << "Loaded Fragment shader" << std::endl;
     }

@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 #include <SFML/Graphics/Image.hpp>
 #include <cstdint>
-#include <ProjectFolderPath.h>
+#include "ProjectFolderPath.h"
 
 namespace fly
 {

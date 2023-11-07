@@ -5,6 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <cmath>
 #include <algorithm>
+#include "ProjectFolderPath.h"
 
 namespace fly
 {
@@ -24,7 +25,7 @@ Airplane::Airplane() :
     m_elevator(0),
     m_pitchVelocity(0),
     m_throttle(0),
-    m_model("resources/airplane.obj")
+    m_model(ProjectFolderPath::str + "\\resources\\airplane.obj")
 {
     auto transform = m_translationMatrix;
     m_model.setTransform(transform);
