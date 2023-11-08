@@ -9,7 +9,6 @@
 namespace fly
 {
 
-
 Airplane::Airplane() :
     m_position({0.0f, 0.0f, 1.2f}),
     m_forward({1.f, 0.f, 0.f}),
@@ -38,7 +37,6 @@ void Airplane::update(float dt)
         m_speed = std::min(std::max(0.f, m_speed), 3.f);
         m_throttle = 0;
     }
-
 
     float target_velocity, rate;
     bool positive_velocity;

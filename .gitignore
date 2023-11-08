@@ -1,7 +1,6 @@
 CMakeLists.txt.user
 *.kdev4
 .kdev*
-*~
 build/
 
 # Codeblocks files
