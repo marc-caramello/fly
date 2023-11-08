@@ -5,11 +5,9 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/Modules")
 file(GLOB SOURCES
     ${PROJECT_SOURCE_DIR}/src/*.cpp
     ${PROJECT_SOURCE_DIR}/src/Debug/*.cpp
-    ${PROJECT_SOURCE_DIR}/extlibs/src/*.cpp
 )
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
-    ${PROJECT_SOURCE_DIR}/extlibs
 )
 find_package(GLEW REQUIRED)
 include_directories(${GLEW_INCLUDE_DIRS})
