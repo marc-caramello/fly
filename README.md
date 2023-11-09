@@ -59,7 +59,3 @@ On Windows, you might find `cmake-gui` useful, set the build and source director
 Contact:
 --------------------
 amhndu ..at.. gmail
-<<<<<<< HEAD
-
-=======
->>>>>>> 61e7c4de1ec50814f28257534e92fdae61984028
