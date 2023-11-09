@@ -60,8 +60,9 @@ Options processArguments(int argc, char** argv)
     Options opts = DefaultOptions;
 
     for (int i = 1; i < argc; ++i)
+    {
         arguments.push_back(argv[i]);
-
+    }
     for (auto i = arguments.begin(); i != arguments.end(); ++i)
     {
         auto&& arg = *i;
@@ -84,7 +85,9 @@ Options processArguments(int argc, char** argv)
         {
             auto width = arg.substr(2);
             if (width.empty() && std::next(i) != arguments.end())
+            {
                 width = *++i;
+            }
             try
             {
                 opts.windowWidth = std::stoi(width);
@@ -99,7 +102,9 @@ Options processArguments(int argc, char** argv)
         {
             auto height = arg.substr(2);
             if (height.empty() && std::next(i) != arguments.end())
+            {
                 height = *++i;
+            }
             try
             {
                 opts.windowHeight = std::stoi(height);
@@ -114,7 +119,9 @@ Options processArguments(int argc, char** argv)
         {
             auto seed = arg.substr(2);
             if (seed.empty() && std::next(i) != arguments.end())
+            {
                 seed = *++i;
+            }
             try
             {
                 opts.seed = std::stol(seed);
@@ -132,7 +139,6 @@ Options processArguments(int argc, char** argv)
             break;
         }
     }
-
     return opts;
 }
 
@@ -168,34 +174,24 @@ int main(int argc, char** argv)
         videoMode = sf::VideoMode::getDesktopMode();
     }
     sf::Window window(videoMode, "OpenGL sandbox", style, settings);
-    LOG(Info) << "OpenGL context: " << window.getSettings().majorVersion << '.' <<
-                                       window.getSettings().minorVersion << std::endl;
+    LOG(Info) << "OpenGL context: " << window.getSettings().majorVersion << '.' << window.getSettings().minorVersion << std::endl;
     if (window.getSettings().majorVersion < 3 && window.getSettings().minorVersion < 2)
     {
         LOG(Error) << "Incapable OpenGL context" << std::endl;
     }
-
     if (opts.fullscreen)
+    {
         window.setMouseCursorVisible(false);
-
-
-    // GLEW Init
+    }
     glewExperimental = GL_TRUE;
     glewInit();
-
-    // GLEW bug where glewInit() sets GL_INVALID_ENUM
     glGetError();
 
     TextureManager::uploadFile("terrain_lookup", ".png");
-    TextureManager::uploadFile("TropicalSunnyDay/TropicalSunnyDay", ".png",
-                               TextureManager::TextureCube);
+    TextureManager::uploadFile("TropicalSunnyDay/TropicalSunnyDay", ".png", TextureManager::TextureCube);
     TextureManager::uploadFile("flare", ".png");
 
-    // The default projection matrix
-    glm::mat4 projection_matrix = glm::perspective(glm::radians(45.0f),
-                                                   1.f * window.getSize().x / window.getSize().y,
-                                                   0.05f, 50.0f);
-
+    glm::mat4 projection_matrix = glm::perspective(glm::radians(45.0f), 1.f * window.getSize().x / window.getSize().y, 0.05f, 50.0f);
     Terrain terrain(15, 15);
     Airplane aircraft;
     ShadowMap shadowMap(aircraft);
@@ -204,10 +200,7 @@ int main(int argc, char** argv)
 
     auto& terrainRenderer  = terrain.getRenderer();
     auto& aircraftRenderer = aircraft.getRenderer();
-
-    terrain.generate(opts.manualSeed ? opts.seed :
-                     std::rand() % 1000 + 1.f * std::rand() / RAND_MAX);
-
+    terrain.generate(opts.manualSeed ? opts.seed : std::rand() % 1000 + 1.f * std::rand() / RAND_MAX);
 
     particles.getRenderer().setProjection(projection_matrix);
     aircraftRenderer.       setProjection(projection_matrix);
@@ -215,15 +208,13 @@ int main(int argc, char** argv)
     sky.                    setProjection(projection_matrix);
 
     aircraftRenderer.setLightDirection({-0.3f, 0.3f, 0.9f});
-    terrainRenderer.setLightDirection({-0.3, 0.3, 0.9});
-    shadowMap.setLightDirection({-0.3f, 0.3f, 0.9f});
+    terrainRenderer. setLightDirection({-0.3, 0.3, 0.9});
+    shadowMap.       setLightDirection({-0.3f, 0.3f, 0.9f});
 
-
-    Camera camera(aircraft.getPosition(),                // Start position
-                  aircraft.getForwardDirection(),       // Direction
-                  aircraft.getUpDirection(),           // Up
+    Camera camera(aircraft.getPosition(),
+                  aircraft.getForwardDirection(),
+                  aircraft.getUpDirection(),
                   aircraft);
-
     CameraController mouse_camera(window, camera);
 
     std::unique_ptr<Box> box;
@@ -232,8 +223,6 @@ int main(int argc, char** argv)
         box.reset(new Box());
         box->setProjection(projection_matrix);
     }
-
-    // Set up input callbacks
     Controller controller(window);
     controller.setCallback(Controller::RollLeft,     std::bind(&Airplane::roll,    &aircraft, -1));
     controller.setCallback(Controller::RollRight,    std::bind(&Airplane::roll,    &aircraft, +1));
@@ -243,20 +232,19 @@ int main(int argc, char** argv)
     controller.setCallback(Controller::ThrustDown,   std::bind(&Airplane::throttle,&aircraft, -1));
     controller.registerRotate([&](float x, float y){ camera.rotate(x, y); });
 
-    // GL setup
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
-    /* Wireframe mode */
-    if (opts.wireframe)
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+    if (opts.wireframe)
+    {
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    }
     glEnable(GL_BLEND);
 
     auto main_frame_buffer = FrameBuffer::Builder(window.getSize().x, window.getSize().y)
                                 .attachColor0("mainFrameBuffer")
                                 .attachDepthTexture()
                                 .build();
-
     particles.getRenderer().useFrameBuffer(FrameBuffer::Builder(window.getSize().x, window.getSize().y)
                                             .attachColor0("particlesFrameBuffer")
                                             .attachDepthTexture(main_frame_buffer.getDepthBuffer())
@@ -272,7 +260,6 @@ int main(int argc, char** argv)
     const float frame_period_seconds = std::chrono::duration<float>(frame_period).count();
     sf::Event event;
 
-    // Perhaps use a state system here...
     bool running = true;
     bool focus   = true;
     bool paused  = false;
@@ -281,24 +268,28 @@ int main(int argc, char** argv)
     {
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed ||
-               (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape))
-                running = false;
+            if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape))
+            {
+                exit(0);
+            }
             else if (event.type == sf::Event::GainedFocus)
             {
                 focus = true;
                 prev_time = std::chrono::steady_clock::now();
             }
             else if (event.type == sf::Event::LostFocus)
+            {
                 focus = false;
-            else if (focus && event.type == sf::Event::KeyReleased
-                    && event.key.code == sf::Keyboard::F4)
+            }
+            else if (focus && event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::F4)
+            {
                 paused = !paused;
+            }
             else if (focus)
+            {
                 mouse_camera.passEvent(event);
-
+            }
         }
-
         auto now = std::chrono::steady_clock::now();
         while (focus && now - prev_time > frame_period)
         {
@@ -313,7 +304,6 @@ int main(int argc, char** argv)
                 }
                 particles.update(frame_period_seconds);
             }
-
             mouse_camera.update(frame_period_seconds);
             camera.updateView(frame_period_seconds);
 
@@ -324,16 +314,17 @@ int main(int argc, char** argv)
                 aircraftRenderer.setView(view);
                 terrainRenderer.setView(view);
                 sky.setView(view);
-                if (opts.planeBox)
-                    box->setView(view);
-            }
 
+                if (opts.planeBox)
+                {
+                    box->setView(view);
+                }
+            }
             auto&& light_space = shadowMap.update();
             terrainRenderer.setLightSpace(light_space);
             glViewport(viewport_save[0], viewport_save[1], viewport_save[2], viewport_save[3]);
 
-            auto boundingBox = glm::translate(aircraft.getModel(),
-                                              aircraft.getLocalBounds().position);
+            auto boundingBox = glm::translate(aircraft.getModel(), aircraft.getLocalBounds().position);
             if (!crashed && terrain.above({aircraft.getLocalBounds().dimensions, boundingBox}))
             {
                 aircraft.crash();
@@ -352,13 +343,16 @@ int main(int argc, char** argv)
                 particles.addUpdater(Updater::createLinearSize(0.001f, 0.020f));
                 particles.getRenderer().setBlending(Additive);
             }
-
             main_frame_buffer.bind();
             glClear(GL_DEPTH_BUFFER_BIT);
-             if (opts.wireframe)
+            
+            if (opts.wireframe)
+            {
                 glClear(GL_COLOR_BUFFER_BIT);
+            }
             aircraftRenderer.draw();
             terrainRenderer.draw();
+            
             if (opts.planeBox)
             {
                 box->setTransform(glm::scale(boundingBox, aircraft.getLocalBounds().dimensions));
@@ -373,10 +367,8 @@ int main(int argc, char** argv)
 
             prev_time += frame_period;
         }
-        // For portability, as MinGW's this_thread::sleep_for is broken
         sf::sleep(sf::seconds(1.f / 60.f));
     }
-
     window.close();
     return EXIT_SUCCESS;
 }
