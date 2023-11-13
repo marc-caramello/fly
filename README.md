@@ -1,6 +1,6 @@
 Fly
 -----------
-![fly-screenshot](screenshot.png) 
+![fly-screenshot](screenshot.png)  
 A simple flight simulator made in C++
 
 How to set this up
