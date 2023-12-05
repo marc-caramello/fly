@@ -17,7 +17,7 @@ Credit
 I borrowed a lot of this code from here  
 •https://github.com/amhndu/fly
 
-Changes that I made that I added
+Changes that I added
 -----------
 •Added 100% compatibility with the Windows OS  
 •Fixed an error where there was an infinite loop on program exit  
