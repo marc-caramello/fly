@@ -10,8 +10,8 @@ Refer to the "windowsSetupInstuctions.pdf" file, which is in the root directory 
 Controls
 -----------
 •Arrow key or WASD, to change the plane's direction.  
-•Move the mouse to rotate the camera.
-•Scroll to change zoom.
+•Move the mouse to rotate the camera.  
+•Scroll to change zoom.  
 
 Credit
 -----------
